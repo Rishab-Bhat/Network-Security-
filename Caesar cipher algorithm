@@ -37,5 +37,3 @@ public class CaesarCipher
 		Console.WriteLine("Cipher: " + encrypt(text, s));
 	}
 }
-
-/* This code contributed by PrinciRaj1992 */
