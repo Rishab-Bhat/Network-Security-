@@ -1,0 +1,54 @@
+// A C# program to decode NULL CIPHER
+using System;
+	
+class GFG
+{
+
+	// Function to decode the message.
+	static String decode(String str)
+	{
+		// Store the decoded string
+		String res = "";
+
+		// found variable is used
+		// to tell that the encoded
+		// encoded character is
+		// found in that particular word.
+		Boolean found = false;
+		for (int i = 0; i < str.Length; i++)
+	{
+		// Set found variable to false whenever we find
+		// whitespace, meaning that encoded character for
+		// new word is not found
+		if (str[i] == ' ')
+		{
+			found = false;
+			continue;
+		}
+		if (!found)
+		{
+			if (str[i] >= 'A' && str[i] <= 'Z')
+			{
+				res += (char)(str[i] + 32);
+				found = true;
+			}
+			else if (str[i] >= 'a' && str[i] <= 'z')
+			{
+				res += (char)str[i];
+				found = true;
+			}
+		}
+	}
+	return res;
+	}
+
+	// Driver Code
+	public static void Main(String[] args)
+	{
+		String str;
+		str = "A Step by Step Guide for Placement Preparation by GeeksforGeeks";
+		Console.WriteLine("Enciphered Message: " + decode(str));
+	}
+}
+
+
